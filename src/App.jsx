@@ -1,3 +1,5 @@
+
+import { Analytics } from '@vercel/analytics/react'; // 冒頭に追加
 import React, { useState } from 'react';
 
 const GAMES = [
@@ -111,6 +113,7 @@ const App = () => {
           ))}
         </section>
       </main>
+      <Analytics /> {/* どこでも良いのでタグを1つ置く */}
     </div>
   );
 };
