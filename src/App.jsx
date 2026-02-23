@@ -24,7 +24,17 @@ const GAMES = [
 ];
 
 const App = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText("sizumutinbotsu@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000); // 2秒後に元の表示に戻す
+  };
+
   return (
+    <div className="h-[100dvh] w-screen bg-[#0a0a0c] text-slate-100 font-sans flex flex-col overflow-hidden select-none">  return (
     <div className="h-[100dvh] w-screen bg-[#0a0a0c] text-slate-100 font-sans flex flex-col overflow-hidden select-none">
       
       {/* ヘッダー */}
@@ -54,9 +64,13 @@ const App = () => {
             <a href="https://www.youtube.com/@%E3%81%A1%E3%82%93%E3%81%BC%E3%81%A4%E3%81%9B%E3%82%93%E3%81%AE%E5%AE%9D%E7%89%A9%E5%BA%AB" target="_blank" rel="noopener noreferrer" className="flex-1 text-center py-2 bg-slate-800 border border-slate-700 rounded-lg text-[11px] font-bold text-slate-300 hover:text-yellow-400 hover:border-yellow-400 transition-colors shadow-sm active:scale-95">
               YOUTUBE
             </a>
-            <a href="mailto:sizumutinbotsu@gmail.com" className="flex-1 text-center py-2 bg-slate-800 border border-slate-700 rounded-lg text-[11px] font-bold text-slate-300 hover:text-yellow-400 hover:border-yellow-400 transition-colors shadow-sm active:scale-95">
-              CONTACT
-            </a>
+            {/* メールアドレスコピーボタン */}
+            <button 
+              onClick={handleCopyEmail}
+              className="flex-1 text-center py-2 bg-slate-800 border border-slate-700 rounded-lg text-[11px] font-bold text-slate-300 hover:text-yellow-400 hover:border-yellow-400 transition-colors shadow-sm active:scale-95"
+            >
+              {copied ? "COPIED!" : "COPY EMAIL"}
+            </button>
           </div>
 
           {/* ゲームリスト */}
