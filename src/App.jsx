@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const GAMES = [
   {
@@ -34,7 +34,6 @@ const App = () => {
   };
 
   return (
-    <div className="h-[100dvh] w-screen bg-[#0a0a0c] text-slate-100 font-sans flex flex-col overflow-hidden select-none">  return (
     <div className="h-[100dvh] w-screen bg-[#0a0a0c] text-slate-100 font-sans flex flex-col overflow-hidden select-none">
       
       {/* ヘッダー */}
@@ -90,8 +89,8 @@ const App = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#121214] via-transparent to-transparent opacity-80" />
                 <div className="absolute bottom-4 left-4 right-4">
-                   <h2 className="text-2xl font-black drop-shadow-lg leading-tight">{game.title}</h2>
-                   <p className="text-[11px] text-yellow-400 font-bold italic drop-shadow-md">{game.catch}</p>
+                  <h2 className="text-2xl font-black drop-shadow-lg leading-tight">{game.title}</h2>
+                  <p className="text-[11px] text-yellow-400 font-bold italic drop-shadow-md">{game.catch}</p>
                 </div>
               </div>
 
