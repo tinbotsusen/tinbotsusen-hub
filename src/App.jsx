@@ -6,7 +6,7 @@ const GAMES = [
     title: "検閲の達人",
     catch: "有害ネットミームクイズ",
     description: "ビジネス文書に紛れ込んだ不適切な表現（ネットミーム）を仕分け、会社の秩序を守る仕分けアクション。",
-    url: "https://vocal-cobbler-f61695.netlify.app",
+    url: "https://kenetsu-no-tatsujin.vercel.app/",
     image: "/kenetsu.jpg", 
     color: "from-red-600 to-slate-900",
     tags: ["シミュレーター", "ネットミーム", "検閲"]
@@ -16,7 +16,7 @@ const GAMES = [
     title: "傍受王者ハッキング",
     catch: "反射神経&動体視力タップアクション",
     description: "世は大ハッカー時代。PC教室の受講生から、狡猾なエージェントまで、さまざまなライバルをなぎ倒せ。",
-    url: "https://profound-cocada-88e05c.netlify.app",
+    url: "https://interception-king-hacking.vercel.app/",
     image: "/hacking.jpg", 
     color: "from-green-600 to-black",
     tags: ["アクション", "ハッキング", "リフレックス"]
