@@ -42,9 +42,24 @@ const App = () => {
         </div>
       </header>
 
-      {/* メイン：ビジュアル重視のゲームリスト */}
+      {/* メイン：SNSリンクとゲームリスト */}
       <main className="flex-1 overflow-y-auto px-4 py-6 space-y-6 touch-pan-y">
         <section className="w-full max-w-xl mx-auto space-y-8">
+          
+          {/* SNS・コンタクトリンクエリア */}
+          <div className="flex justify-center gap-3 pb-2">
+            <a href="https://x.com/tinbotsu_sub" target="_blank" rel="noopener noreferrer" className="flex-1 text-center py-2 bg-slate-800 border border-slate-700 rounded-lg text-[11px] font-bold text-slate-300 hover:text-yellow-400 hover:border-yellow-400 transition-colors shadow-sm active:scale-95">
+              X (TWITTER)
+            </a>
+            <a href="https://www.youtube.com/@%E3%81%A1%E3%82%93%E3%81%BC%E3%81%A4%E3%81%9B%E3%82%93%E3%81%AE%E5%AE%9D%E7%89%A9%E5%BA%AB" target="_blank" rel="noopener noreferrer" className="flex-1 text-center py-2 bg-slate-800 border border-slate-700 rounded-lg text-[11px] font-bold text-slate-300 hover:text-yellow-400 hover:border-yellow-400 transition-colors shadow-sm active:scale-95">
+              YOUTUBE
+            </a>
+            <a href="mailto:sizumutinbotsu@gmail.com" className="flex-1 text-center py-2 bg-slate-800 border border-slate-700 rounded-lg text-[11px] font-bold text-slate-300 hover:text-yellow-400 hover:border-yellow-400 transition-colors shadow-sm active:scale-95">
+              CONTACT
+            </a>
+          </div>
+
+          {/* ゲームリスト */}
           {GAMES.map((game) => (
             <a 
               key={game.id}
@@ -53,14 +68,12 @@ const App = () => {
               rel="noopener noreferrer"
               className="group relative block overflow-hidden rounded-2xl border border-slate-700 bg-slate-800 transition-all active:scale-[0.97] shadow-2xl"
             >
-              {/* サムネイル画像エリア */}
               <div className="aspect-video w-full overflow-hidden relative border-b border-slate-700">
                 <img 
                   src={game.image} 
                   alt={game.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                {/* 画像上のオーバーレイ */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#121214] via-transparent to-transparent opacity-80" />
                 <div className="absolute bottom-4 left-4 right-4">
                    <h2 className="text-2xl font-black drop-shadow-lg leading-tight">{game.title}</h2>
@@ -68,7 +81,6 @@ const App = () => {
                 </div>
               </div>
 
-              {/* テキスト詳細エリア */}
               <div className="p-4 bg-[#121214]/95">
                 <div className="flex gap-1 mb-3">
                   {game.tags.map(tag => (
@@ -86,28 +98,6 @@ const App = () => {
           ))}
         </section>
       </main>
-
-      {/* メイン：ビジュアル重視のゲームリスト */}
-      <main className="flex-1 overflow-y-auto px-4 py-6 space-y-6 touch-pan-y">
-        <section className="w-full max-w-xl mx-auto space-y-8">
-          
-          {/* 追加：SNS・コンタクトリンクエリア */}
-          <div className="flex justify-center gap-3 pb-2">
-            <a href="https://x.com/tinbotsu_sub" target="_blank" rel="noopener noreferrer" className="flex-1 text-center py-2 bg-slate-800 border border-slate-700 rounded-lg text-[11px] font-bold text-slate-300 hover:text-yellow-400 hover:border-yellow-400 transition-colors shadow-sm active:scale-95">
-              X (TWITTER)
-            </a>
-            <a href="https://www.youtube.com/@%E3%81%A1%E3%82%93%E3%81%BC%E3%81%A4%E3%81%9B%E3%82%93%E3%81%AE%E5%AE%9D%E7%89%A9%E5%BA%AB" target="_blank" rel="noopener noreferrer" className="flex-1 text-center py-2 bg-slate-800 border border-slate-700 rounded-lg text-[11px] font-bold text-slate-300 hover:text-yellow-400 hover:border-yellow-400 transition-colors shadow-sm active:scale-95">
-              YOUTUBE
-            </a>
-            {/* メールアドレスは href="mailto:あなたのメールアドレス" と記述してください */}
-            <a href="sizumutinbotsu@gmail.com" className="flex-1 text-center py-2 bg-slate-800 border border-slate-700 rounded-lg text-[11px] font-bold text-slate-300 hover:text-yellow-400 hover:border-yellow-400 transition-colors shadow-sm active:scale-95">
-              CONTACT
-            </a>
-          </div>
-
-          {/* 既存のゲームリスト */}
-          {GAMES.map((game) => (
-
     </div>
   );
 };
