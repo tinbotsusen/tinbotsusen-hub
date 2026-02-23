@@ -87,11 +87,27 @@ const App = () => {
         </section>
       </main>
 
-      <footer className="pb-[env(safe-area-inset-bottom)] p-4 bg-slate-900 border-t border-slate-800 shrink-0 flex justify-around text-[10px] font-bold text-slate-500">
-          <span className="hover:text-white">PROJECT INFO</span>
-          <span className="hover:text-white">X (TWITTER)</span>
-          <span className="hover:text-white">ITCH.IO</span>
-      </footer>
+      {/* メイン：ビジュアル重視のゲームリスト */}
+      <main className="flex-1 overflow-y-auto px-4 py-6 space-y-6 touch-pan-y">
+        <section className="w-full max-w-xl mx-auto space-y-8">
+          
+          {/* 追加：SNS・コンタクトリンクエリア */}
+          <div className="flex justify-center gap-3 pb-2">
+            <a href="https://x.com/tinbotsu_sub" target="_blank" rel="noopener noreferrer" className="flex-1 text-center py-2 bg-slate-800 border border-slate-700 rounded-lg text-[11px] font-bold text-slate-300 hover:text-yellow-400 hover:border-yellow-400 transition-colors shadow-sm active:scale-95">
+              X (TWITTER)
+            </a>
+            <a href="https://www.youtube.com/@%E3%81%A1%E3%82%93%E3%81%BC%E3%81%A4%E3%81%9B%E3%82%93%E3%81%AE%E5%AE%9D%E7%89%A9%E5%BA%AB" target="_blank" rel="noopener noreferrer" className="flex-1 text-center py-2 bg-slate-800 border border-slate-700 rounded-lg text-[11px] font-bold text-slate-300 hover:text-yellow-400 hover:border-yellow-400 transition-colors shadow-sm active:scale-95">
+              YOUTUBE
+            </a>
+            {/* メールアドレスは href="mailto:あなたのメールアドレス" と記述してください */}
+            <a href="sizumutinbotsu@gmail.com" className="flex-1 text-center py-2 bg-slate-800 border border-slate-700 rounded-lg text-[11px] font-bold text-slate-300 hover:text-yellow-400 hover:border-yellow-400 transition-colors shadow-sm active:scale-95">
+              CONTACT
+            </a>
+          </div>
+
+          {/* 既存のゲームリスト */}
+          {GAMES.map((game) => (
+
     </div>
   );
 };
